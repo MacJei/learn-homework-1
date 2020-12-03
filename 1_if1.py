@@ -14,12 +14,36 @@
 
 """
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+def check_age():
+  
+  while True:
+    age = input('Введите, пожалуйста, Ваш возраст в числовом формате:')
+
+    try:
+      age = abs(int(age))
+    except ValueError:
+      print('Error! This is not integer number, try again.')
+      continue
+    else:
+      return age
+      break
+
+
+def main(age):
+
+  if age <= 6:
+    return f"Вам всего {age}. Вы, наверное, в данном возрасте должны учиться в детском саду"
+  elif 7 <= age <= 17:
+    return f"Вам всего {age}. Вы, наверное, в данном возрасте должны учиться в школе"
+  elif 18 <= age <= 30:
+    return f"Вам всего {age}. Вы, наверное, в данном возрасте должны учиться в ВУЗе"
+  else:
+    return f"Вам всего {age}. Вы, наверное, в данном возрасте должны работать"
+
+
+age_user = check_age()
+quest = main(age_user)
 
 if __name__ == "__main__":
-    main()
+    print(quest)
+
