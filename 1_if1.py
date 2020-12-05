@@ -26,24 +26,22 @@ def check_age():
       continue
     else:
       return age
-      break
 
 
 def main(age):
 
   if age <= 6:
     return f"Вам всего {age}. Вы, наверное, в данном возрасте должны учиться в детском саду"
-  elif 7 <= age <= 17:
+  if 7 <= age <= 17:
     return f"Вам всего {age}. Вы, наверное, в данном возрасте должны учиться в школе"
-  elif 18 <= age <= 30:
+  if 18 <= age <= 30:
     return f"Вам всего {age}. Вы, наверное, в данном возрасте должны учиться в ВУЗе"
   else:
     return f"Вам всего {age}. Вы, наверное, в данном возрасте должны работать"
 
 
-age_user = check_age()
-quest = main(age_user)
-
 if __name__ == "__main__":
+    age_user = check_age()
+    quest = main(age_user)
     print(quest)
 

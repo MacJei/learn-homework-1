@@ -19,7 +19,7 @@ def hello_user():
       if question == 'Хорошо':
         break
       else:
-        question
+        continue
     
 if __name__ == "__main__":
     hello_user()

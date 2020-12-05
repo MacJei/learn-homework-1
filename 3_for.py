@@ -30,10 +30,10 @@ def second_task():
 def school_data():
   s = 'абвгдежзик'
   data = list()
-  for i in range(11):
+  for i in range(12):
     data.append({
       'school_class': str(i + 1) + s[randint(0, len(s) - 1)],
-      'scores': [randint(2,5) for _ in range(randint(5,10))]
+      'scores': [randint(2,5) for _ in range(randint(3,19))]
     })
 
   return data
@@ -45,10 +45,10 @@ def main():
   #print(len(data))
   avg_score_school = 0
   
-  for i in range(len(data)):
-    avg_score_class = sum(data[i]['scores']) / len(data[i]['scores'])
-    clas = data[i]['school_class']
-    print(f'Средний балл класса {clas} равен {round(avg_score_class, 1)}')
+  for clas in data:
+    avg_score_class = sum(clas['scores']) / len(clas['scores'])
+    clas_ = clas['school_class']
+    print(f'Средний балл класса {clas_} равен {round(avg_score_class, 1)}')
     avg_score_school += avg_score_class / len(data)
   print(f'Средний балл по школе равен {round(avg_score_school, 1)}')
        
